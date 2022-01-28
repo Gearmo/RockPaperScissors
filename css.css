@@ -1,0 +1,38 @@
+html, body {
+    background-color: #c2c2c2;
+}
+.base {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px;
+}
+.title {
+    font-size: 42px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    top: auto;
+}
+.selections {
+    margin: 50px;
+    color:#ffffff;
+    width: 500;
+    display: flex;
+    gap: 25px;
+}
+.selection {
+    color:#ffffff;
+    padding: 50px;
+    font-size: 50px;
+    border: 2px solid #202020;
+    border-radius: 15px;
+}
+.selection:hover {
+    transform: scale(1.1);
+    transition: all .1s ease-in-out;
+}
+.selection:active {
+    background-color: #c2c2c2;
+}
+
