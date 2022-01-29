@@ -15,7 +15,7 @@ html, body {
     top: auto;
 }
 .selections {
-    margin: 50px;
+    margin: 80px;
     color:#ffffff;
     width: 500;
     display: flex;
@@ -35,4 +35,33 @@ html, body {
 .selection:active {
     background-color: #c2c2c2;
 }
-
+.scoreboard {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    grid-template-rows: repeat(5, 0fr);
+    column-gap: 360px;
+    row-gap: 0px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+.scoreboardtext {
+    font-size: 42px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.scores {
+    font-size: 42px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.result {
+    font-size: 50px;
+    opacity: .5;
+}
+.result.winner {
+    opacity: 1;
+    font-size: 65px;
+}
