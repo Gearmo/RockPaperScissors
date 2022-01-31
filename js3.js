@@ -1,14 +1,63 @@
-/*
-- First, ask user to input either "rock", "paper", or "scissors" (make sure its case-sensitive for inputs like Rock, ROCK, rOcK, etc.) This will be playerPlay
-- Create "computerPlay" function that will generate number between 1 and 3. (Make sure to return these results, or console.log if testing)
-- Based the random number generated, create "if" statements to determine winner of round.
+const selectionButtons = document.querySelectorAll("[data-selection]")
+const finalColumn = document.querySelector("[data-final-column]")
+const computerScorePan = document.querySelector("[data-computer-score")
+const yourScorePan = document.querySelector("[data-your-score")
+const SELECTIONS = [
+  {
+    name: "rock",
+    emoji: "✊",
+    beats: "scissors"
+  },
+  {
+    name: "paper",
+    emoji: "✋",
+    beats: "rock"
+  },
+  {
+    name: "scissors",
+    emoji: "✌",  
+    beats: "paper"
+  },
+]
 
-*/
+selectionButtons.forEach(selectionButton => {
+  selectionButton.addEventListener("click", e => {
+    const selectionName = selectionButton.dataset.selection
+    const selection = SELECTIONS.find(selection => selection.name === selectionName)
+    makeSelection(selection)
+  })
+})
 
-function playRound(playerSelection, computerSelection) {
-    const computerPlay(math.random(3));
-  }
-  
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+function makeSelection(selection) {
+  const computerSelection = randomSelection()
+  const yourWinner = isWinner (selection, computerSelection)
+  const computerWinner = isWinner(computerSelection, selection)
+  console.log(computerSelection)
+
+  addSelectionResult(computerSelection, computerWinner)
+  addSelectionResult(selection, yourWinner)
+
+  if (yourWinner) incrementScore(yourScoreSpan)
+  if (computerWinner) incrementScore(computerScorePan)
+}
+
+function incrementScore(scoreSpan) {
+  scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1
+}
+
+function addSelectionResult(selection, winner) {
+  const div = document.createElement("div")
+  div.innerTest = selection.emoji
+  div.classList.add("result-selection")
+    if (winner) div.classList.add("winner")
+  finalColumn.after(div)
+}
+
+function isWinner(selection, opponentSelection) {
+  return selection.Name === randomSelection()
+}
+
+function randomSelection() {
+  const randomIndex = Math.floor(Math.random() * SELECTIONS.length)
+  return SELECTIONS[randomIndex]
+}
