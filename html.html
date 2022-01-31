@@ -13,15 +13,15 @@
     <div class="base">
       <div class="title">Rock, Paper, Scissors</div>
       <div class="selections">
-        <button class="selection">✊</button>
-        <button class="selection">✋</button>
-        <button class="selection">✌</button>
+        <button class="selection" data-selection="rock">✊</button>
+        <button class="selection" data-selection="paper">✋</button>
+        <button class="selection"  data-selection="scissors">✌</button>
       </div>
-      <div class="scoreboard">
-        <div class="scoreboardtext">You: <span class="scores">0</span></div>
-        <div class="scoreboardtext">PC: <span class="scores">0</span></div>
-        <div class="result winner">✊</div>
-        <div class="result">✌</div>
+      <div class="results">
+        <div class="result-text">You: <span class="result-score" data-your-score>0</span></div>
+        <div class="final" data-final-column>PC: <span class="result-score" data-computer-score>0</span></div>
+        <div class="result-selection winner">✊</div>
+        <div class="result-selection">✌</div>
       </div>
   </div>
   </body>
