@@ -35,7 +35,7 @@ html, body {
 .selection:active {
     background-color: #c2c2c2;
 }
-.scoreboard {
+.results {
     display: grid;
     grid-template-columns: repeat(2, 0fr);
     grid-template-rows: repeat(5, 0fr);
@@ -45,23 +45,23 @@ html, body {
     justify-items: center;
     align-items: center;
 }
-.scoreboardtext {
+.result-text {
     font-size: 42px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
-.scores {
+.result-score {
     font-size: 42px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
-.result {
+.result-selection {
     font-size: 50px;
     opacity: .5;
 }
-.result.winner {
+.result-selection.winner {
     opacity: 1;
     font-size: 65px;
 }
