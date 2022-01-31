@@ -1,7 +1,8 @@
+//these just pulls data-selection functions from HTML to work with
 const selectionButtons = document.querySelectorAll("[data-selection]")
 const finalColumn = document.querySelector("[data-final-column]")
-const computerScorePan = document.querySelector("[data-computer-score")
-const yourScorePan = document.querySelector("[data-your-score")
+const computerScoreSpan = document.querySelector("[data-computer-score")
+const yourScoreSpan = document.querySelector("[data-your-score")
 const SELECTIONS = [
   {
     name: "rock",
@@ -32,31 +33,35 @@ function makeSelection(selection) {
   const computerSelection = randomSelection()
   const yourWinner = isWinner (selection, computerSelection)
   const computerWinner = isWinner(computerSelection, selection)
-  console.log(computerSelection)
 
   addSelectionResult(computerSelection, computerWinner)
   addSelectionResult(selection, yourWinner)
 
   if (yourWinner) incrementScore(yourScoreSpan)
-  if (computerWinner) incrementScore(computerScorePan)
+  if (computerWinner) incrementScore(computerScoreSpan)
 }
 
+
+// increments scores if winner 
 function incrementScore(scoreSpan) {
   scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1
 }
 
+//
 function addSelectionResult(selection, winner) {
   const div = document.createElement("div")
-  div.innerTest = selection.emoji
+  div.innerText = selection.emoji
   div.classList.add("result-selection")
     if (winner) div.classList.add("winner")
   finalColumn.after(div)
 }
 
+//
 function isWinner(selection, opponentSelection) {
-  return selection.Name === randomSelection()
+  return selection.beats === opponentSelection.name
 }
 
+//converts computer RPS into a number between 0 and 2, then returns
 function randomSelection() {
   const randomIndex = Math.floor(Math.random() * SELECTIONS.length)
   return SELECTIONS[randomIndex]
